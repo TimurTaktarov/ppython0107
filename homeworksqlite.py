@@ -6,8 +6,8 @@ with sqlite3.connect('homework_db.sqlite3') as connection:
     # query = """
     #     CREATE TABLE IF NOT EXISTS books_shop(
     #         title TEXT NOT NULL,
-    #         price INTEGER NOT NULL CHECK(length(price) > 0),
-    #         number_of_pages INTEGER NOT NULL CHECK(length(number_of_pages) > 0)
+    #         price INTEGER NOT NULL CHECK (price > 0),
+    #         number_of_pages INTEGER NOT NULL CHECK (number_of_pages > 0)
     #     )
     # """
     # cursor.execute(query)
