@@ -5,6 +5,7 @@ with sqlite3.connect('homework_db.sqlite3') as connection:
 
     # query = """
     #     CREATE TABLE IF NOT EXISTS books_shop(
+    #         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     #         title TEXT NOT NULL,
     #         price INTEGER NOT NULL CHECK (price > 0),
     #         number_of_pages INTEGER NOT NULL CHECK (number_of_pages > 0)
@@ -12,37 +13,39 @@ with sqlite3.connect('homework_db.sqlite3') as connection:
     # """
     # cursor.execute(query)
 
+    # id = '1'
     # title = 'History'
     # price = '100'
     # number_of_pages = '241'
-    # values = [title, price, number_of_pages]
+    # values = [id, title, price, number_of_pages]
     #
     # query = """
-    #     INSERT INTO books_shop(title, price, number_of_pages)
-    #     VALUES (?, ?, ?)
+    #     INSERT INTO books_shop(id ,title, price, number_of_pages)
+    #     VALUES (?, ?, ?, ?)
     # """
     # cursor.execute(query, values)
 
+    # id = '2'
     # title = 'comic'
     # price = '95'
     # number_of_pages = '30'
-    # values = [title, price, number_of_pages]
+    # values = [id, title, price, number_of_pages]
     #
     # query = """
-    #     INSERT INTO books_shop(title, price, number_of_pages)
-    #     VALUES (?, ?, ?)
+    #     INSERT INTO books_shop(id, title, price, number_of_pages)
+    #     VALUES (?, ?, ?, ?)
     # """
     # cursor.execute(query, values)
 
     # values = (
-    #     ('math', '50', '600'),
-    #     ('History of Zelenskiy', '99', '50'),
-    #     ('CR7', '250', '125'),
+    #     ('3', 'math', '50', '600'),
+    #     ('4', 'History of Zelenskiy', '99', '50'),
+    #     ('5', 'CR7', '250', '125'),
     # )
     #
     # query = """
-    #     INSERT INTO books_shop(title, price, number_of_pages)
-    #     VALUES (?, ?, ?)
+    #     INSERT INTO books_shop(id, title, price, number_of_pages)
+    #     VALUES (?, ?, ?, ?)
     # """
     # cursor.executemany(query, values)
 
@@ -87,7 +90,7 @@ with sqlite3.connect('homework_db.sqlite3') as connection:
     #         number_of_pages > 200
     # """
     # cursor.execute(query, {'Barcode': '0-00077'})
-    #
+
     # query = """
     #     DELETE FROM books_shop
     #     WHERE price = 100
