@@ -49,10 +49,10 @@ with sqlite3.connect('hwssqqll_db.sqlite3') as connection:
     # pprint(result.fetchall())
 
     # query = """
-    #     SELECT title, name, author_id     FULL OUTER AND RIGHT JOINs IS NOT WORKING
-    #     FROM books                        FULL OUTER AND RIGHT JOINs IS NOT WORKING
-    #     FULL JOIN author                  FULL OUTER AND RIGHT JOINs IS NOT WORKING
-    #     ON books.author_id = author.id    FULL OUTER AND RIGHT JOINs IS NOT WORKING
-    # """                                   FULL OUTER AND RIGHT JOINs IS NOT WORKING
-    # result = cursor.execute(query)        FULL OUTER AND RIGHT JOINs IS NOT WORKING
-    # pprint(result.fetchall())             FULL OUTER AND RIGHT JOINs IS NOT WORKING, Why?? IDK
+    #     SELECT title, name, author_id
+    #     FROM books
+    #     FULL JOIN author
+    #     ON books.author_id = author.id
+    # """
+    # result = cursor.execute(query)
+    # pprint(result.fetchall())
