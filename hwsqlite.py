@@ -6,25 +6,26 @@ with sqlite3.connect('hwssqqll_db.sqlite3') as connection:
     cursor.execute("PRAGMA foreign_keys = ON")
 
     # query = """
-    #     CREATE TABLE IF NOT EXISTS books(
-    #     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    #     title TEXT NOT NULL,
-    #     FOREIGN KEY (id) REFERENCES author(id)
-    #     )
-    # """
-    # cursor.execute(query)
-    #
-    # query = """
     #     CREATE TABLE IF NOT EXISTS author(
     #     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     #     name TEXT NOT NULL
     #     )
     # """
     # cursor.execute(query)
-
-    # values = [3, 'Amazon advices']
+    #
     # query = """
-    #     INSERT INTO books(id, title)
+    #     CREATE TABLE IF NOT EXISTS books(
+    #     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    #     title TEXT NOT NULL,
+    #     author_id INTEGER,
+    #     FOREIGN KEY (author_id) REFERENCES author(id)
+    #     )
+    # """
+    # cursor.execute(query)
+
+    # values = ['Parasolka', 4]
+    # query = """
+    #     INSERT INTO books(title, author_id)
     #     VALUES(?, ?)
     # """
     # cursor.execute(query, values)
@@ -32,17 +33,26 @@ with sqlite3.connect('hwssqqll_db.sqlite3') as connection:
     # query = """
     #     SELECT title, name
     #     FROM books
-    #     LEFT JOIN author
-    #     ON books.id = author.id
+    #     JOIN author
+    #     ON books.author_id = author.id
     # """
     # result = cursor.execute(query)
     # pprint(result.fetchall())
 
-    query = """
-        SELECT 
-        FROM books
-        FULL JOIN author
-        ON books.id = author.id    
-    """
-    result = cursor.execute(query)
-    pprint(result.fetchall())
+    # query = """
+    #     SELECT title, name
+    #     FROM books
+    #     LEFT JOIN author
+    #     ON books.author_id = author.id
+    # """
+    # result = cursor.execute(query)
+    # pprint(result.fetchall())
+
+    # query = """
+    #     SELECT title, name, author_id     FULL OUTER AND RIGHT JOINs IS NOT WORKING
+    #     FROM books                        FULL OUTER AND RIGHT JOINs IS NOT WORKING
+    #     FULL JOIN author                  FULL OUTER AND RIGHT JOINs IS NOT WORKING
+    #     ON books.author_id = author.id    FULL OUTER AND RIGHT JOINs IS NOT WORKING
+    # """                                   FULL OUTER AND RIGHT JOINs IS NOT WORKING
+    # result = cursor.execute(query)        FULL OUTER AND RIGHT JOINs IS NOT WORKING
+    # pprint(result.fetchall())             FULL OUTER AND RIGHT JOINs IS NOT WORKING, Why?? IDK
